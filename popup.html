@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Tracker</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 1.5em;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #progress-container {
+            height: 5px;
+            background-color: #eee;
+            border-radius: 3px;
+            margin-top: auto;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #4CAF50;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notFound">
+        <div class="message-container">
+            <h1>No form submission detected.</h1>
+            <p>Please <strong>submit a microsoft form</strong> to replay it. Once a form has been submitted, the latest submission will appear here for you to replay.</p>
+        </div>
+    </div>
+    <div class="content" style="display: none;">
+        <h1>
+            <a href="https://example.com" target="_blank" id="formLabel" style="color: darkblue">
+                Untitled form
+            </a>
+        </h1>
+
+        <div class="input-group">
+            <input type="number" id="submissionCount" placeholder="Number of submissions">
+            <button id="goButton">Send!</button>
+        </div>
+
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
